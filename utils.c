@@ -6,7 +6,7 @@
 #include <sys/stat.h>
 
 // simple write file method
-void WriteFile(FILE *file, char path[], char text[])
+void WriteFile(FILE *file, char* path, char* text)
 {
     file = fopen(path, "w");
     fprintf(file, text);
@@ -19,14 +19,14 @@ void WriteFile(FILE *file, char path[], char text[])
 }
 
 // c project
-void CreateCProject(char name[])
+void CreateCProject(char* name)
 {
     printf("[*] Initializing Project Directory...\n");
     mkdir(name);
     printf("Done!\n\n");
 
     printf("[*] Initializing Project Structure...\n");
-    struct CProject cproj = {NULL, NULL, NULL};
+    CProject cproj = {NULL, NULL, NULL};
     printf("Done!\n\n");
 
     printf("[*] Initializing File Paths...\n");
@@ -46,14 +46,14 @@ void CreateCProject(char name[])
 }
 
 // python project
-void CreatePythonProject(char name[])
+void CreatePythonProject(char* name)
 {
     printf("[*] Initializing Project Directory...\n");
     mkdir(name);
     printf("Done!\n\n");
 
     printf("[*] Initializing Project Structure...\n");
-    struct PythonProject pythonproj = {NULL};
+    PythonProject pythonproj = {NULL};
     printf("Done!\n\n");
 
     printf("[*] Initializing File Paths...\n");
@@ -67,14 +67,14 @@ void CreatePythonProject(char name[])
 }
 
 // web project
-void CreateWebProject(char name[])
+void CreateWebProject(char* name)
 {
     printf("[*] Initializing Project Directory...\n");
     mkdir(name);
     printf("Done!\n\n");
 
     printf("[*] Initializing Project Structure...\n");
-    struct WebProject webproj = {NULL};
+    WebProject webproj = {NULL};
     printf("Done!\n\n");
 
     printf("[*] Initializing File Paths...\n");

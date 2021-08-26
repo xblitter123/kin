@@ -4,24 +4,24 @@
 
 #include <stdio.h>
 
-struct CProject
+typedef struct
 {
-    FILE *c_file;
-    FILE *h_file;
-    FILE *build_file;
-};
+    FILE* c_file;
+    FILE* h_file;
+    FILE* build_file;
+} CProject;
 
-struct PythonProject
+typedef struct
 {
     FILE *python_file;
-};
+} PythonProject;
 
-struct WebProject
+typedef struct
 {
-    FILE *html_file;
-    FILE *css_file;
-    FILE *js_file;
-};
+    FILE* html_file;
+    FILE* css_file;
+    FILE* js_file;
+} WebProject;
 
 // c project
 void CreateCProject(char name[]);
