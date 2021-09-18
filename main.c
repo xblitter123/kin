@@ -4,9 +4,9 @@
 
 #include "utils.h"
 
-int main(int argc, char *argv[])
+int main(int argc, char** argv)
 {
-	// i wish there waqs a better way of doing this (there probably is)
+	// i wish there was a better way of doing this (there probably is)
 	if(argc > 2)
 	{
 		if(strcmp(argv[1], "-c") == 0)
@@ -20,6 +20,11 @@ int main(int argc, char *argv[])
 		else if(strcmp(argv[1], "-web") == 0)
 		{
 			CreateWebProject(argv[2]);
+		}
+		else
+		{
+			printf("error: invalid arguments.");
+			exit(0);
 		}
 	}
 	else

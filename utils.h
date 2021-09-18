@@ -1,6 +1,4 @@
-#ifndef UTILS_H
-
-#define UTILS_H
+#pragma once
 
 #include <stdio.h>
 
@@ -13,7 +11,7 @@ typedef struct
 
 typedef struct
 {
-    FILE *python_file;
+    FILE* python_file;
 } PythonProject;
 
 typedef struct
@@ -31,5 +29,3 @@ void CreatePythonProject(char name[]);
 
 // web project
 void CreateWebProject(char name[]);
-
-#endif

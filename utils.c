@@ -6,7 +6,7 @@
 #include <sys/stat.h>
 
 // simple write file method
-void WriteFile(FILE *file, char* path, char* text)
+void WriteFile(FILE* file, char* path, char* text)
 {
     file = fopen(path, "w");
     fprintf(file, text);
@@ -39,7 +39,7 @@ void CreateCProject(char* name)
     snprintf(build_path, sizeof(build_path), "%s/build.bat", name);
     printf("Done!\n\n");
 
-    WriteFile(cproj.c_file, c_path, "#include \"main.h\"\n\n#include <stdio.h>\n\nvoid PrintHello()\n{\n\tprintf(\"hello\");\n}\n\nint main(int argc, char *argv[])\n{\n\tPrintHello();\n}");
+    WriteFile(cproj.c_file, c_path, "#include \"main.h\"\n\n#include <stdio.h>\n\nvoid PrintHello()\n{\n\tprintf(\"hello\");\n}\n\nint main(int argc, char** argv)\n{\n\tPrintHello();\n}");
     WriteFile(cproj.h_file, h_path, "#ifndef MAIN_H\n\n#define MAIN_H\n\nvoid PrintHello();\n\n#endif");
     WriteFile(cproj.build_file, build_path, "gcc -Wall -c main.c\ngcc -o main main.o");
     printf("Done!\n");
